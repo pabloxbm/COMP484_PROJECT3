@@ -84,7 +84,7 @@ function createTimestamp(){
         newSpan.innerHTML = date;
         timeStampFirst = false;
     }else{
-        newSpan.innerHTML = "  &nbsp;&nbsp;&nbsp;&gt;  " + date;
+        newSpan.innerHTML = "  &nbsp;&nbsp;&nbsp;&nbsp;&gt; " + date;
     }
     statusOutput.appendChild(newSpan)
 }
@@ -97,7 +97,7 @@ function startFlashing(e){
     //Added Clear Interval here so it doesn't keep replacing intervals
     clearInterval(intervalId);
     e.preventDefault();
-    intervalId = setInterval(()=>(controlPanel.classList.toggle("hidden")), 750);
+    intervalId = setInterval(()=>(controlPanel.classList.toggle("hidden")), 500);
 }
 function stopFlashing(e){
     clearInterval(intervalId);
