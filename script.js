@@ -75,8 +75,17 @@ function toggleStatus(e){
 
 // Task 8: Dynamic Element Creation
 var timeStampFirst = true;
+var count = 0;
 function createTimestamp(){
 
+    
+    // if(count > 16){
+    //     while(statusOutput.firstChild){
+    //         statusOutput.removeChild(statusOutput.firstChild);
+    //     }
+    //     count = 0;
+    //     timeStampFirst = true;
+    // }
     const newSpan = document.createElement("span");
     var date = new Date();
     date = date.toLocaleTimeString();
@@ -84,9 +93,14 @@ function createTimestamp(){
         newSpan.innerHTML = date;
         timeStampFirst = false;
     }else{
-        newSpan.innerHTML = "  &nbsp;&nbsp;&nbsp;&nbsp;&gt; " + date;
+        if(count%4==0){
+            newSpan.innerHTML = "<br>&gt; " + date;
+        }else{
+            newSpan.innerHTML = "  &nbsp;&nbsp;&nbsp;&nbsp;&gt; " + date;
+        }
     }
-    statusOutput.appendChild(newSpan)
+    count++;
+    statusOutput.appendChild(newSpan);
 }
 /* ======================================= */
 // --- Task 10: Timed Animation ---
