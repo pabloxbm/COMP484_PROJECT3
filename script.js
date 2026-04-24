@@ -45,7 +45,7 @@ function highlightListItems(){
     // console.log("bruzz");
     // console.log(document.querySelectorAll('li'));
 
-    // creating a list of the items that are an li element
+    // creating an array for the list of the items that are an li element
     var itemList = document.querySelectorAll('li');
     
     // Console Logs for Debugging
